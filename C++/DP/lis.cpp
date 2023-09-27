@@ -8,9 +8,6 @@ for(int i=0;i<n;i++){
 // size of the lis
 int ans = S.size();
 
-//////////////////////////// see that later
-// https://codeforces.com/blog/entry/13225?#comment-180208
-
 vi LIS(const vi &elements){
     auto compare = [&](int x, int y) {
         return elements[x] < elements[y];
