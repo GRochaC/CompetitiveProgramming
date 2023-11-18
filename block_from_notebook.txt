@@ -21,8 +21,8 @@ prim
 
 # ED
 trie
-prefixsum2d
-delta encoding
+# prefixsum2d
+# delta encoding
 bit 2d
 bit bigger k
 mergesorttree  # ?
@@ -35,13 +35,13 @@ unbounded knapsack
 # double gcd   # ?
 factorization sqrt
 verif primo
-crivo
+# crivo
 modular exponentiation
 next permutation
 # bitwise      # remover uma parte?
 all subsets
 trie bits
-safe map
+# safe map
 
 # Strings
 pal int
