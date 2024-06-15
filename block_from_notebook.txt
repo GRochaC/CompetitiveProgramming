@@ -12,12 +12,14 @@ iterative bs
 # Grafos
 bfs 01
 bfs
-dijkstra
-floyd warshall
-kruskal
+#dijkstra
+#floyd warshall
+#kruskal
 dfs
-topological sort
+#topological sort
 prim
+euler
+#lca
 
 # ED
 trie
@@ -26,7 +28,7 @@ trie
 bit 2d
 bit bigger k
 mergesorttree  # ?
-dsu
+#dsu
 mo
 mochila
 unbounded knapsack
@@ -34,16 +36,20 @@ unbounded knapsack
 # Math
 # double gcd   # ?
 factorization sqrt
-verif primo
+#miller habin
 # crivo
 modular exponentiation
+
+# Misc
 next permutation
 # bitwise      # remover uma parte?
-all subsets
+# submask
+# ordered set
 trie bits
 # safe map
 
 # Strings
 pal int
 # hash         # ?
+#z func
 
