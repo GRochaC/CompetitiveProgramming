@@ -1,0 +1,88 @@
+\subsubsection{Introdução à Probabilidade}
+\paragraph{Eventos.} Um evento pode ser representado como um conjunto $A \subset X$ onde $X$ contém todos os resultudos possíveis e $A$ é um subconjunto de resultados.
+
+Cada resultado $x$ é designado uma probabilidade $p(x)$. Então, a probabilidade $P(A)$ de um evento $A$ pode ser calculada como a soma das probabilidades dos resultados:
+$$P(A) = \sum_{x \in A}^{} p(x).$$
+
+\paragraph{Complemento.} A probabilidade do complemento $\overline{A}$, \textit{i.e.} o evento $A$ não ocorrer, é dado por:
+$$P(\overline{A}) = 1 - P(A).$$
+
+\paragraph{Eventos não mutualmente exclusivos.} A probabilidade da união $A\cup B$ é dada por:
+$$P(A\cup B) = P(A) + P(B) - P(A\cap B).$$
+Se $A$ e $B$ forem eventos mutualmente exclusivos, \textit{i.e.} $A \cup B = \emptyset$, a probabilidade é dada por:
+$$P(A\cup B) = P(A) + P(B).$$
+
+\paragraph{Probabilidade condicional.} A probabilidade de $A$ assumindo que $B$ ocorreu é dada por:
+$$P(A|B) = \frac{P(A \cap B)}{P(B)}.$$
+Os eventos $A$ e $B$ são ditos \textbf{independentes} se, e somente se,
+$$P(A|B) = P(A) \quad \textnormal{e} \quad P(B|A) = P(B).$$
+
+\paragraph{Teorema de Bayes.} A probabilidade de um evento $A$ ocorrer, antes e depois de condicionar em outro evento $B$ é dada por:
+$$P(A|B) = \frac{P(B|A)P(A)}{P(B)} \quad \textnormal{ou} \quad P(A_i|B) = \frac{P(B|A_i)P(A_i)}{\sum_{j \in A}^{} P(B|A_j)P(A_j)}$$
+
+\subsubsection{Variáveis Aleatórias}
+Seja $X$ uma variável aleatória discreta com probabilidade $P(X = x)$ de assumir o valor $x$. Ela vai então ter um valor esperado (média)
+$$\mu = E[X] = \sum_{i = i}^{n} x_iP(X = xi)$$
+e variância
+$$\sigma^2 = V[X] = E[X^2] - [E[X]]^2 = \sum_{i=1}^{n} (x - E[X])^2P(X=x_i)$$
+onde $\sigma$ é o desvio-padrão.
+
+Se $X$ for contínua ela terá uma função de densidade $f_X(x)$ e as somas acima serão em vez disso integrais com $P(X=x)$ substituído por $f_X(x)$.
+
+\paragraph{Linearidade do Valor Esperado.}
+$$E[aX + bY + c] = aE[X] + bE[Y] + c.$$
+
+No caso de $X$ e $Y$ serem independentes, temos que:
+$$E[XY] = E[X]E[Y]$$
+$$V[aX + bY + c] = a^2E[X] + b^2E[Y].$$
+
+\subsubsection{Distribuições Discretas}
+\paragraph{Distribuição Binomial.} Número de sucessor $k$ em $n$ experimentos independentes de sucesso/fracasso, cada um dos quais produz sucesso com probabilidade $p$ é Bin($n$,$p$), $n \in \mathbb{N}$, $0 \leq p \leq 1.$
+
+$$P(X = k) = \binom{n}{k}p^k(1-p)^{n-k}$$
+$$\mu = np, \quad \sigma^2 = np(1-p)$$
+
+Bin($n$,$p$) é aproximadamente Pois($np$) para $p$ pequeno.
+
+\paragraph{Distribuição Geométrica.} Número de tentativas $k$ necessárias para conseguir o primeiro sucesso em experimentos independentes de sucesso/fracasso, cada um dos quais produz sucesso com probabilidade $p$ é Geo($p$), $0 \leq p \leq 1.$
+
+$$P(X = k) = (1-p)^{k-1}p, \quad k \in \mathbb{N}$$
+$$\mu = \frac{1}{p}, \quad \sigma^2 = \frac{1-p}{p}$$
+
+\paragraph{Distribuição de Poisson.} Número de eventos $k$ ocorrendo em um período de tempo fixo $t$ se esses eventos ocorrerem com uma taxa média conhecida $r$ e independente do tempo já que o último evento é Pois($\lambda$), $\lambda = tr$.
+
+$$P(X = k) = e^{-k}\frac{\lambda^k}{k!}, \quad k \in \mathbb{N}_0$$
+$$\mu = \lambda, \quad \sigma^2 = \lambda.$$
+
+\subsubsection{Distribuições Contínuas}
+\paragraph{Distribuição Uniforme.} Se a função de densidade é constante entre $a$ e $b$ e 0 em outro lugar ela é Uni($a$,$b$), $a < b$.
+
+$$
+f(x) = \begin{cases}
+			\frac{1}{b-a},\quad a < x < b \\
+			0, \quad \textnormal{caso contrário}
+		\end{cases}
+$$
+
+$$\mu = \frac{a+b}{2},\quad \sigma^2 = \frac{(b-a)^2}{12}.$$
+
+\paragraph{Distribuição Exponencial.} Tempo entre eventos em um processo de Poisson é Exp($\lambda$), $\lambda > 0$.
+
+$$
+f(x) = \begin{cases}
+			\lambda e^{-\lambda x},\quad x \ge 0 \\
+			0,\quad x < 0
+		\end{cases}
+$$
+$$
+F(x) = \begin{cases}
+			1 - e^{-\lambda	x},\quad x \ge 0 \\
+			0,\quad x < 0
+		\end{cases}
+$$
+
+$$\mu = \frac{1}{\lambda},\quad \sigma^2 = \frac{1}{\lambda^2}.$$
+
+\paragraph{Distribuição Normal.} Maioria das variáveis aleatórias reais com média $\mu$ e variância $\sigma^2$ são bem descritas por $N(\mu,\sigma^2)$, $\sigma > 0$.
+
+$$f(x) = \frac{1}{\sqrt{2\pi \sigma^2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}$$
