@@ -14,11 +14,13 @@ Uma $r$-permutação de $n$ objetos é uma seleção \textbf{ordenada} (ou arran
 
 \subsubsection*{Tabela de fatoriais.}
 
-\begin{tabular}{|c | c c c c c c c c c c c |}
-	$n$ & 0 &1& 2& 3& 4& 5& 6& 7& 8& 9& 10 \\
-	\hline
-	$n!$ & 1& 1& 2& 6& 24& 120& 720& 5040& 40320& 362880& 3628800 \\
-\end{tabular}
+\begin{center}
+    \begin{tabular}{|c | c c c c c c c c c c c |}
+    	$n$ & 0 &1& 2& 3& 4& 5& 6& 7& 8& 9& 10 \\
+    	\hline
+    	$n!$ & 1& 1& 2& 6& 24& 120& 720& 5040& 40320& 362880& 3628800 \\
+    \end{tabular}
+\end{center}
 
 \subsubsection{Combinação}
 Uma $r$-combinação de $n$ objetos é um seleção de $r$ deles, sem diferenciação de ordem.
@@ -42,27 +44,30 @@ Uma $r$-combinação de $n$ objetos é um seleção de $r$ deles, sem diferencia
     $$\binom{n}{k} = \binom{n-1}{k-1} + \binom{n-1}{k}, \quad \textnormal{para } n > k \ge 1.$$
     
 	\end{enumerate}
-\paragraph{Propriedades.}
-\begin{enumerate}
-	\item \textbf{Hockey-stick (soma sobre $n$).}
-	$$\sum_{m = 0}^{n} \binom{m}{k} = \binom{n+1}{k+1}$$
 
-	\item \textbf{Soma sobre $k$.}
-	$$\sum_{k = 0}^{n} \binom{n}{k} = 2^n$$
-	$$\sum_{k = 0}^{n} \binom{n}{2k} = \sum_{k = 0}^{n} \binom{n}{2k+1} = 2^{n-1}$$
+\subsubsection*{Propriedades.}
+\begin{multicols}{2}
+    \begin{enumerate}
+        \item \textbf{Hockey-stick (soma sobre $n$).}
+        $$\sum_{m = 0}^{n} \binom{m}{k} = \binom{n+1}{k+1}$$
 
-	\item \textbf{Soma sobre $n$ e $k$.}
-	$$\sum_{k=0}^{m} \binom{n+k}{k} = \binom{n+m+1}{m}$$
+        \item \textbf{Soma sobre $k$.}
+        $$\sum_{k = 0}^{n} \binom{n}{k} = 2^n$$
+        $$\sum_{k = 0}^{n} \binom{n}{2k} = \sum_{k = 0}^{n} \binom{n}{2k+1} = 2^{n-1}$$
 
-	\item \textbf{Soma com peso.}
-	$$\sum_{k=0}^{n} k\cdot \binom{n}{k} = n2^{n-1}$$
+        \item \textbf{Soma sobre $n$ e $k$.}
+        $$\sum_{k=0}^{m} \binom{n+k}{k} = \binom{n+m+1}{m}$$
 
-	\item \textbf{($n$+1)-ésimo termo da sequência de Fibonacci.}
-	$$\sum_{k = 0}^{n} \binom{n-k}{k} = F_{n+1}$$
+        \item \textbf{Soma com peso.}
+        $$\sum_{k=0}^{n} k\cdot \binom{n}{k} = n2^{n-1}$$
 
-	\item \textbf{Soma dos quadrados.}
-	$$\sum_{k = 0}^{n} \binom{n}{k}^2 = \binom{2n}{n}$$
-\end{enumerate}
+        \item \textbf{($n$+1)-ésimo termo da sequência de Fibonacci.}
+        $$\sum_{k = 0}^{n} \binom{n-k}{k} = F_{n+1}$$
+
+        \item \textbf{Soma dos quadrados.}
+        $$\sum_{k = 0}^{n} \binom{n}{k}^2 = \binom{2n}{n}$$
+    \end{enumerate}
+\end{multicols}
  
 \subsubsection{Números de Catalan}
 O $n$-ésimo número de Catalan, $C_n$, pode ser calculado de duas formas:
@@ -76,12 +81,13 @@ O $n$-ésimo número de Catalan, $C_n$, pode ser calculado de duas formas:
 \end{enumerate}
 
 \subsubsection*{Tabela dos 10 primeiros números de Catalan.}
-
-\begin{tabular}{|c | c c c c c c c c c c c |}
-	$n$ & 0 &1& 2& 3& 4& 5& 6& 7& 8& 9& 10 \\
-	\hline
-	$C_n$ & 1& 1& 2& 5& 14& 42& 132& 429& 1430& 4862& 16796 \\
-\end{tabular}
+\begin{center}
+    \begin{tabular}{|c | c c c c c c c c c c c |}
+        $n$ & 0 &1& 2& 3& 4& 5& 6& 7& 8& 9& 10 \\
+        \hline
+        $C_n$ & 1& 1& 2& 5& 14& 42& 132& 429& 1430& 4862& 16796 \\
+    \end{tabular}
+\end{center}
 
 \subsubsection*{Aplicações}
 O número de Catalan $C_n$ é a solução para os seguintes problemas:

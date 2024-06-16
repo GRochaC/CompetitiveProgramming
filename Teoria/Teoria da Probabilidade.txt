@@ -22,9 +22,9 @@ $$P(A|B) = \frac{P(B|A)P(A)}{P(B)} \quad \textnormal{ou} \quad P(A_i|B) = \frac{
 
 \subsubsection{Variáveis Aleatórias}
 Seja $X$ uma variável aleatória discreta com probabilidade $P(X = x)$ de assumir o valor $x$. Ela vai então ter um valor esperado (média)
-$$\mu = E[X] = \sum_{i = i}^{n} x_iP(X = xi)$$
+$$\mu = E[X] = \sum_{i = 1}^{n} x_iP(X = x_i)$$
 e variância
-$$\sigma^2 = V[X] = E[X^2] - [E[X]]^2 = \sum_{i=1}^{n} (x - E[X])^2P(X=x_i)$$
+$$\sigma^2 = V[X] = E[X^2] - (E[X])^2 = \sum_{i=1}^{n} (x - E[X])^2P(X=x_i)$$
 onde $\sigma$ é o desvio-padrão.
 
 Se $X$ for contínua ela terá uma função de densidade $f_X(x)$ e as somas acima serão em vez disso integrais com $P(X=x)$ substituído por $f_X(x)$.
