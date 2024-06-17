@@ -1,0 +1,188 @@
+\subsubsection{Geometria Básica}
+\paragraph{Produto Escalar.}
+Geometricamente é o produto do comprimento do vetor $a$ pelo comprimento da projeção do vetor $b$ sobre $a$.
+
+$$a \cdot b = \|a\|\|b\|\cos\theta.$$
+
+\subsubsection*{Propriedades.}
+\begin{multicols}{2}
+	\begin{enumerate}
+		\item $a \cdot b = b \cdot a$.
+		\item $(\alpha \cdot a) \cdot b = \alpha\cdot(a \cdot b)$.
+		\item $(a+b)\cdot c = a\cdot c + b \cdot c$.
+		\item Norma de $a$ (comprimento ao quadrado): $\|a\|^2 = a \cdot a$.
+		\item Projeção de $a$ sobre o vetor $b$: $\frac{a \cdot b}{\|b\|}$.
+		\item Ângulo entre os vetores: $\cos^{-1}{\frac{a \cdot b}{\|a\|\|b\|}}$
+	\end{enumerate}
+\end{multicols}
+
+\paragraph{Produto Vetorial.}
+Dados dois vetores independentes linearmente $a$ e $b$, o produto vetorial $a \times b$ é um vetor perpendicular ao vetor $a$ e ao vetor $b$ e é a normal do plano contendo os dois vetores.
+
+$$a \times b = det
+	\begin{vmatrix}
+		e_x & e_y & e_z \\
+		x_1 & y_1 & z_1 \\
+		x_2 & y_2 & z_2 \\
+	\end{vmatrix}
+$$
+
+O sinal do coeficiente $e_z$ do produto vetorial indica a orientação relativa dos vetores. Se positivo, o ângulo de $a$ e $b$ é anti-horário. Se negativo, o ângulo é horário e se for zero, os vetores são colineares.
+
+\paragraph{Propriedades.}
+\begin{enumerate}
+	\item $a \times b = -b \times a$.
+	\item $(\alpha \cdot a) \times b = \alpha \cdot (a \times b)$.
+	\item $a \cdot (b \times c) = b\cdot (c \times a) = -a\cdot(c\times b)$.
+	\item $(a+b)\times c = a\times c + b\times c$.
+	\item $\|a \times b \| = \|a\|\|b\|\sin\theta$.
+\end{enumerate}
+
+\subsubsection{Geometria Analítica}
+\paragraph{Distância entre dois pontos.} Dados dois pontos $a = (x_1,y_2)$ e $b = (x_2,y_2)$, a distância entre $a$ e $b$ é dada por:
+		$$d_{a,b} = \sqrt{(x_1 - x_2)^2 + (y_1 - y2)^2}$$
+
+\paragraph{Condição de alinhamento de três pontos.} Dados três pontos $a = (x_1,y_2)$, $b = (x_2,y_2)$ e $c = (x_3,y_3)$, os pontos $a$, $b$ e $c$ estão alinhados se:
+		$$det(A) =
+			\begin{vmatrix}
+				x_1 & y_1 & 1 \\
+				x_2 & y_2 & 1 \\
+				x_3 & y_3 & 1
+			\end{vmatrix} = 0 $$
+
+\paragraph{Equação da Reta (forma geral).} Os pontos $(x,y)$ que pertencem a uma reta $r$ devem satisfazer:
+		$$ax + by + c = 0$$
+
+\paragraph{Equação da Reta (forma reduzida).} A equação reduzida da reta, em que $m = \tan(a) = \frac{\Delta y}{\Delta x}$ é o coef. angular, e $n$ é o coef. linear, isto é, o valor de $y$ em que a reta intercepta o eixo $y$, é dada por:
+		$$y = mx + n = m(x - x_0) +y_0$$
+
+\paragraph{Distância entre ponto e reta.} Dados um pontos $p = (x_1,y_1)$ e uma reta $r$ de equação $ax+by+c=0$, a distância entre $p$ e $r$ é dada por:
+		$$d_{p,r} = \frac{|ax_1+by_1+c|}{\sqrt{a^2+b^2}}$$
+
+\paragraph{Interseção de retas.} Para determinar os pontos de interseção é necessário resolver um sistema de equações. Há três possibilidades para interseção de retas:
+		\begin{enumerate}
+			\item Retas concorrentes: solução única. Apenas 1 ponto em comum.
+			\item Retas paralelas coincidentes: infinitas soluções. As retas possuem todos os pontos em comum.
+			\item Retas paralelas distintas: nenhuma solução. As retas não possuem nenhum ponto em comum.
+		\end{enumerate}
+
+\paragraph{Equação da Circuferência (forma reduzida).} Os pontos $(x,y)$ que pertencem a uma circuferência $c$ devem satisfazer:
+		$$(x-a)^2+(y-b)^2 = r^2,$$
+		onde $(a,b)$ é o centro da circuferência e $r$ o seu raio.
+
+\paragraph{Equação da Circuferência (forma geral).} A partir da equação reduzida da circuferência, encontramos a equação geral:
+		$$x^2 +y^2-2ax-2by+(a^2+b^2-r^2)=0$$
+
+\paragraph{Interseção entre reta e circuferência.} Para determinar o tipo de interseção é necessário resolver um sistema não-linear. Há três possibilidades como solução do sistema:
+		\begin{enumerate}
+			\item Reta exterior à circuferência: nenhuma solução. A reta não possui nenhum ponto de comum com a circuferência.
+			\item Reta tangente à circuferência: solução única. A reta possui apenas 1 ponto em comum com a circuferência.
+			\item Reta secante à circuferência: duas soluções. A reta cruza a circuferência em 2 pontos distintos.
+		\end{enumerate}
+
+\subsubsection{Geometria Plana}
+\subsubsection*{Triângulos.}
+\begin{multicols}{2}
+	\begin{itemize}
+		\item Comprimento dos lados: $a,b,c$
+		\item Semiperímetro: $p = \frac{a+b+c}{2}$
+		\item Altura:
+		\begin{itemize}
+			\item Equilátero: $h = \frac{\sqrt{3}}{2}l$
+			\item Isósceles: $h = \sqrt{l^2 - \frac{b^2}{4}}$
+		\end{itemize}
+		\item Área:
+		\begin{itemize}
+			\item Equilátero: $A =\frac{l^2\sqrt{3}}{4}$
+			\item Isósceles: $A =\frac{1}{2} bh$
+			\item Escaleno: $A =\sqrt{p(p-a)(p-b)(p-c)}$
+		\end{itemize}
+		\item Raio circunscrito: $R = \frac{1}{4A}abc$
+		\item Raio inscrito: $r = \frac{1}{p}A$
+		\item Tamanho da mediana: $m_a = \frac{1}{2}\sqrt{2b^2+2c^2-a^2}$
+	\end{itemize}
+\end{multicols}
+
+\subsubsection*{Quadriláteros.}
+\begin{center}
+	\begin{tabular}{|c|c|c|c|}
+		Figura & Área ($A$) & Perímetro ($P$) & Diagonal ($d$) \\
+		\hline
+		Quadrado & $l^2$ & $4l$&$l\sqrt{2}$ \\
+		\hline
+		Retângulo&$bh$&$2(b+h)$&$\sqrt{b^2 + h^2}$\\
+		\hline
+		Losango&$\frac{1}{2}Dd$&$4l$&$l\sqrt{2}$\\
+		\hline
+		Trapézio&$\frac{1}{2}h(B+b)$&$B+b+l_1+l_2$&$\sqrt{h^2 + \frac{(B-b)^2}{4h}}$
+		
+	\end{tabular}
+\end{center}
+
+\subsubsection*{Círculos.}
+\begin{multicols}{2}
+	\begin{itemize}
+		\item Área: $A = \pi r^2$
+		\item Perímetro: $C = 2\pi r$
+		\item Diâmetro: $d = 2r$
+		\item Área do setor circular: $A = \frac{1}{2}r^2\theta$
+		\item Comprimento do arco: $L = r\theta$
+		\item Perímetro do setor circular: $P = r(\theta+2)$
+	\end{itemize}
+\end{multicols}
+
+\paragraph{Teorema de Pick.} Suponha que um polígono tenha coordenadas inteiras para todos os seus vértices. Seja $i$ o número de pontos inteiros no interior do polígono e $b$ o número de pontos inteiros na sua fronteira (incluindo vértices e pontos ao longo dos lados). Então, a área $A$ deste polígono é:
+$$A = i + \frac{b}{2} -1.$$
+$$b = gcd(x_2-x_1,y_2-y_1)+1.$$
+
+\subsubsection{Trigonometria}
+\paragraph{Funções Trigonométricas.}
+	$$\sin\theta = \frac{\textnormal{cateto oposto a }\theta}{\textnormal{hipotenusa}}$$
+
+	$$\cos\theta = \frac{\textnormal{cateto adjacente a }\theta}{\textnormal{hipotenusa}}$$
+
+	$$\tan\theta = \frac{\textnormal{cateto oposto a }\theta}{\textnormal{cateto adjacente a}\theta}$$
+
+\subsubsection*{Ângulos notáveis.}
+
+\begin{center}
+	\begin{tabular}{|c|c c c c c|}
+		$\theta$ & $0^{\circ}$ & $30^{\circ}$&$45^{\circ}$&$60^{\circ}$&$90^{\circ}$ \\
+		\hline
+		$\sin\theta$ &0&$\frac{1}{2}$&$\frac{\sqrt{2}}{2}$&$\frac{\sqrt{3}}{2}$&1 \\
+		\hline
+		$\cos\theta$ &1&$\frac{\sqrt{3}}{2}$&$\frac{\sqrt{2}}{2}$&$\frac{1}{2}$&0 \\
+		\hline
+		$\tan\theta$ &0&$\frac{\sqrt{3}}{3}$&1&$\sqrt{3}$&$\infty$ \\
+		
+	\end{tabular}
+\end{center}
+
+\subsubsection*{Propriedades.}
+\begin{multicols}{2}
+	\begin{enumerate}
+		\item $\sin(a+b) = \sin a \cos b + \cos a \sin b$
+		\item $\cos(a+b) = \cos a \cos b - \sin a \sin b$
+		\item $\tan(a+b) = \frac{\tan a + \tan b}{1 - \tan a \tan b}$
+		\item $\sin a + \sin b = 2\sin\frac{a+b}{2}\cos\frac{a-b}{2}$
+		\item $\sin a - \sin b = 2\cos\frac{a+b}{2}\sin\frac{a-b}{2}$
+		\item $\cos a + \cos b = 2\cos\frac{a+b}{2}\cos\frac{a-b}{2}$
+		\item $\cos a - \cos b = 2\sin\frac{a+b}{2}\sin\frac{a-b}{2}$
+		\item $a\sin x+b\cos x = r\sin(x+\phi)$, onde $r=\sqrt{a^2+b^2}$ e $\phi = \tan^{-1}\frac{b}{a}$ 
+		\item $a\cos x+b\sin x = r\cos(x-\phi)$, onde $r=\sqrt{a^2+b^2}$ e $\phi = \tan^{-1}\frac{b}{a}$
+		\item \textbf{Lei dos Senos}: $$\frac{a}{\sin \hat{A}} = \frac{b}{\sin \hat{B}} = \frac{c}{\sin \hat{c}} = 2r.$$
+		\item \textbf{Lei dos Cossenos}:
+		$$a^2 = b^2 +c^2+2\cdot b\cdot c\cdot\cos\hat{A}$$
+		$$b^2 = a^2 +c^2+2\cdot a\cdot c\cdot\cos\hat{B}$$
+		$$c^2 = b^2 +a^2+2\cdot b\cdot a\cdot\cos\hat{C}$$
+		\item \textbf{Teorema de Tales}: A interseção de um feixe de retas paralelas por duas retas transversais forma segmentos proporcionais:
+		$$\frac{\overline{AB}}{\overline{BC}} = \frac{\overline{DE}}{\overline{EF}}$$
+		\item \textbf{Casos de semelhança}: dois triângulos são semelhantes se
+		\begin{itemize}
+			\item dois ângulos de um são congruentes a dois do outro. Critério AA (Ângulo, Ângulo).
+			\item os três lados são proporcionais aos três lados do outro. Critério LLL (Lado, Lado, Lado).
+			\item possuem um ângulo congruente compreendido entre lados proporcionais. Critério LAL (Lado, Ângulo, Lado).
+		\end{itemize}
+
+	\end{enumerate}
+\end{multicols}

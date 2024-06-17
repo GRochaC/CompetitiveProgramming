@@ -74,8 +74,25 @@ def create_notebook(section, blocked):
                 aux += '\\includes{%s}{%s}\n' % \
                     (file_name, file_path)
 
-        aux += '\n\\end{multicols}\n\\end{document}\n'
+        aux += '\n\\end{multicols}\n'
+
+        # Adicionando a parte teorica
+        path = 'Teoria'
+        aux += '\\section{%s}\n' % path
+
+        for file in os.listdir(path):
+            name, ext = os.path.splitext(file)
+
+            aux += '\\subsection{%s}\n' % name
+
+            with open(os.path.join(path,file), 'r') as txt:
+                aux += txt.read() + '\n'
+
+                txt.close()
+
+        aux += '\n\\end{document}\n'
         texfile.write(aux)
+        texfile.close()
 
 def main():
     cpy_template()

@@ -1,0 +1,112 @@
+\subsubsection{Permutação e Arranjo}
+Uma $r$-permutação de $n$ objetos é uma seleção \textbf{ordenada} (ou arranjos) de $r$ deles.
+
+\begin{enumerate}
+    \item \textbf{Objetos distintos.} 
+    $$P(n,r) = \frac{n!}{(n-r)!}$$
+
+    \item \textbf{Objetos com repetição.} Se temos $n$ objetos com $k_1$ do tipo 1, $k_2$ do tipo 2,\dots,$k_m$ do tipo $m$, e $\sum k_i = n$:
+    $$P(n;k_1,k_2,...,k_m) = \frac{n!}{k_1!\cdot k_2!\cdot ... \cdot k_m!}$$
+
+    \item \textbf{Repetição ilimitada.} Se temos $n$ objetos e uma quantidade ilimitada deles:
+    $$P(n,r) = n^r$$
+\end{enumerate}
+
+\subsubsection*{Tabela de fatoriais.}
+
+\begin{center}
+    \begin{tabular}{|c | c c c c c c c c c c c |}
+    	$n$ & 0 &1& 2& 3& 4& 5& 6& 7& 8& 9& 10 \\
+    	\hline
+    	$n!$ & 1& 1& 2& 6& 24& 120& 720& 5040& 40320& 362880& 3628800 \\
+    \end{tabular}
+\end{center}
+
+\subsubsection{Combinação}
+Uma $r$-combinação de $n$ objetos é um seleção de $r$ deles, sem diferenciação de ordem.
+
+\begin{enumerate}
+    \item \textbf{Objetos distintos.} 
+    $$C(n,r) = \frac{n!}{r!(n - r)!} = \binom{n}{r}.$$
+
+    Definimos também:
+    $$C(n,r) = C(n, n-r)$$
+    $$C(n,0) = C(n,n) = 1$$
+    $$C(n,r) = 0, \quad \textnormal{para } r < 0 \textnormal{ ou } r > n.$$
+
+    \item \textbf{Objetos com repetição (Stars and Bars).} Número de maneiras de dividir $n$ objetos idênticos em $k$ grupos:
+    $$C(n,k) = \binom{n+k-1}{n}$$
+
+	\item \textbf{Teorema Binomial.} Sendo $a$ e $b$ números reais quaisquer e $n$ um número inteiro positivo, temos que:
+	$$(a+b)^n = \sum_{k=0}^{n} \binom{n}{k}a^{n-k}b^{k}$$
+
+    \item \textbf{Triângulo de Pascal.} Triângulo com o elemento na $n$-ésima linha e $k$-ésima coluna denotado por $\binom{n}{k}$, satisfazendo:
+    $$\binom{n}{k} = \binom{n-1}{k-1} + \binom{n-1}{k}, \quad \textnormal{para } n > k \ge 1.$$
+    
+	\end{enumerate}
+
+\subsubsection*{Propriedades.}
+\begin{multicols}{2}
+    \begin{enumerate}
+        \item \textbf{Hockey-stick (soma sobre $n$).}
+        $$\sum_{m = 0}^{n} \binom{m}{k} = \binom{n+1}{k+1}$$
+
+        \item \textbf{Soma sobre $k$.}
+        $$\sum_{k = 0}^{n} \binom{n}{k} = 2^n$$
+        $$\sum_{k = 0}^{n} \binom{n}{2k} = \sum_{k = 0}^{n} \binom{n}{2k+1} = 2^{n-1}$$
+
+        \item \textbf{Soma sobre $n$ e $k$.}
+        $$\sum_{k=0}^{m} \binom{n+k}{k} = \binom{n+m+1}{m}$$
+
+        \item \textbf{Soma com peso.}
+        $$\sum_{k=0}^{n} k\cdot \binom{n}{k} = n2^{n-1}$$
+
+        \item \textbf{($n$+1)-ésimo termo da sequência de Fibonacci.}
+        $$\sum_{k = 0}^{n} \binom{n-k}{k} = F_{n+1}$$
+
+        \item \textbf{Soma dos quadrados.}
+        $$\sum_{k = 0}^{n} \binom{n}{k}^2 = \binom{2n}{n}$$
+    \end{enumerate}
+\end{multicols}
+ 
+\subsubsection{Números de Catalan}
+O $n$-ésimo número de Catalan, $C_n$, pode ser calculado de duas formas:
+\begin{enumerate}
+    \item \textbf{Fórmula recursiva:} 
+    $$C_0 = C_1 = 1$$
+    $$C_n = \sum_{k = 0}^{n-1}C_kC_{n-1-k}, \quad \textnormal{para } n \ge 2.$$
+
+    \item \textbf{Fórmula analítica:}
+    $$C_n = \frac{1}{n+1} \binom{2n}{n} = \prod_{k=2}^{n} \frac{n+k}{k}, \quad \textnormal{para } n \ge 0$$
+\end{enumerate}
+
+\subsubsection*{Tabela dos 10 primeiros números de Catalan.}
+\begin{center}
+    \begin{tabular}{|c | c c c c c c c c c c c |}
+        $n$ & 0 &1& 2& 3& 4& 5& 6& 7& 8& 9& 10 \\
+        \hline
+        $C_n$ & 1& 1& 2& 5& 14& 42& 132& 429& 1430& 4862& 16796 \\
+    \end{tabular}
+\end{center}
+
+\subsubsection*{Aplicações}
+O número de Catalan $C_n$ é a solução para os seguintes problemas:
+\begin{multicols}{2}
+    \begin{itemize}
+        \item Número de sequências de parênteses balanceados consistindo de $n$ pares de parênteses.
+        \item Números de árvores binárias enraizadas cheias com $n+1$ folhas (vértices não são numerados), ou, equivalentemente, com um total de $n$ nós internos. Uma árvore binária enraizada é cheia se cada vértice tem dois filhos ou nenhum.
+        \item Número de maneiras de colocar parênteses completamente em $n+1$ fatores.
+        \item Número de triangularizações de um polígono convexo com $n+2$ lados.
+        \item Número de maneiras de conectar $2n$ pontos em um círculo para formar $n$ cordas disjuntas.
+        \item Número de árvores binárias completas não isomórficas com $n+1$ nós.
+        \item Número de caminhos monotônicos na grade de pontos do ponto $(0,0)$ ao ponto $(n,n)$ em uma grade quadrada de tamanho $n$x$n$, que não passam acima da diagonal principal.
+        \item Número de partições não cruzadas de um conjunto de $n$ elementos.
+        \item Números de manieras de se cobrir uma escada 1\dots $n$ usando $n$ retângulos (a escada possui $n$ colunas e a $i$-ésima coluna possui altura $i$).
+        \item Número de permutações de tamanho $n$ que podem ser \textit{stack sorted}.
+    \end{itemize}
+\end{multicols}
+
+\subsubsection{Princípio da Inclusão-Exclusão}
+Para calcular o tamanho da união de múltiplos conjuntos, é necessário somar os tamanhos desses conjuntos \textbf{separadamente}, e depois subtrair os tamanhos de todas as interseções \textbf{em pares} dos conjuntos, em seguida adicionar de volta o tamanho das interseções de \textbf{trios} dos conjuntos, subtrair o tamanho das interseções de \textbf{quartetos} dos conjuntos, e assim por diante, até a interseção de \textbf{todos} os conjuntos.
+
+$$|\bigcup_{i=1}^{n} A_i| = \sum_{\emptyset \neq J \subseteq \{1,2,...n\}}^{} (-1)^{|J|-1}|\bigcap_{j \in J}^{} A_j|$$
