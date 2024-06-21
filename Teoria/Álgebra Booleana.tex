@@ -17,12 +17,12 @@ A álgebra booleana possui apenas três operações básicas: conjunção, disju
 \subsubsection{Operações secundárias}
 Operações compostas a partir de operações básicas incluem, dentro outras, as seguintes:
 \begin{center}
-    \begin{tabular}{c|c|c|c}
-        Operador lógico & Operador & Notação & Definição\\
+    \begin{tabular}{c|c|c|c|c}
+        Operador lógico & Operador & Notação & Definição & Equivalência\\
         \hline
-        Condição material & $\rightarrow$ & $x \rightarrow y$ & $x \rightarrow y = 0 \textnormal{ se } x = 1 \textnormal{ e } y = 0,x \rightarrow y = 1 \textnormal{ caso contrário}$ \\
-        Bicondição material & $\Leftrightarrow$ & $x \Leftrightarrow y$ &$x \Leftrightarrow y = 1 \textnormal{ se } x=y,x \Leftrightarrow y = 0 \textnormal{ caso contrário}$ \\
-        OR Exclusivo & XOR & $x \oplus y$  &$x \oplus y = 1 \textnormal{ se } x\neq y,x \oplus y = 0 \textnormal{ caso contrário}$
+        Condição material & $\rightarrow$ & $x \rightarrow y$ & $x \rightarrow y = 0 \textnormal{ se } x = 1 \textnormal{ e } y = 0,x \rightarrow y = 1 \textnormal{ caso contrário}$ & $\neg x \lor y$ \\
+        Bicondição material & $\Leftrightarrow$ & $x \Leftrightarrow y$ &$x \Leftrightarrow y = 1 \textnormal{ se } x=y,x \Leftrightarrow y = 0 \textnormal{ caso contrário}$ & $(x \lor \neg y) \land (\neg x \lor y)$\\
+        OR Exclusivo & XOR & $x \oplus y$  &$x \oplus y = 1 \textnormal{ se } x\neq y,x \oplus y = 0 \textnormal{ caso contrário}$ & $(x \lor y) \land (\neg x \lor \neg y)$
     \end{tabular}
 \end{center}
 
