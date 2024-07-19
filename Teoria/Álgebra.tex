@@ -62,10 +62,13 @@ Os 11 primerios números da sequência são:
     \end{vmatrix}^n 
     = 
     \begin{vmatrix}
-       F_{n+1} & F_{n} \\
-       F_{n} & F_{n-1} 
+        F_{n+1} & F_{n} \\
+        F_{n} & F_{n-1} 
     \end{vmatrix}$$
 \end{itemize}
+
+\subsubsection{Aritmética Modular}
+[...]
 
 \subsubsection{Funções}
 \paragraph{Função Totiente de Euler.} A função-phi $\phi(n)$ conta o número de inteiros entre 1 e $n$ incluso, nos quais são coprimos com $n$. Dois números são coprimos se o MDC deles é igual a 1.
@@ -103,8 +106,26 @@ Os 11 primerios números da sequência são:
 \paragraph{Número de Divisores.} Se a fatoração prima de $n$ é $p_1^{e_1}\cdot p_2^{e_2}\dots  p_k^{e_k}$, onde $p_i$ são números primos distintos, então o número de divisores é dado por:
 $$d(n) = (e_1+1)\cdot(e_2+1) \dots (e_k+1)$$
 
+Um número altamente composto (HCN) é um número inteiro que possui mais divisores do que qualquer número inteiro positivo menor.
+
+\begin{center}
+    \begin{tabular}{c|c|c|c|c|c|c|c|c}
+        $n$ & 6 & 60&360&5040&83160&720720&735134400&74801040398884800 \\
+        \hline
+        $d(n)$ & 4&12&24&60&128&240&1344&64512
+    \end{tabular}
+\end{center}
+
 \paragraph{Soma dos Divisores.} Para $n = p_1^{e_1}\cdot p_2^{e_2}\dots p_k^{e_k}$ temos a seguinte fórmula:
 $$\sigma(n) = \frac{p_1^{e_1+1}-1}{p_1-1} \cdot \frac{p_2^{e_2+1}-1}{p_2-1}  \dots  \frac{p_k^{e_k+1}-1}{p_k-1}$$
 
-\subsubsection{Aritmética Modular}
-[...]
+\paragraph{Contagem de números primos.} A função $\pi(n)$ conta a quantidade de números primos menores ou iguais à algum número real $n$. Pelo Teorema do Número Primo, a função tem crescimento aproximado à $\frac{x}{\ln(x)}$.
+
+\begin{center}
+    \begin{tabular}{c|c|c|c|c|c|c|c|c}
+        $n$ &10&$10^2$&$10^3$&$10^4$&$10^5$&$10^6$&$10^7$&$10^8$ \\
+        \hline
+        $\pi(n)$ &4&25&168&1229&9592&78489&664579&5761455
+        
+    \end{tabular}
+\end{center}
