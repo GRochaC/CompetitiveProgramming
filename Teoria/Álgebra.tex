@@ -50,11 +50,6 @@ Os 11 primerios números da sequência são:
 \textbf{Fórmulas para calcular o n-ésimo número de Fibonacci.}
 
 \begin{itemize}
-    \item Fórmula de Binet:
-    $$F_n = \frac{(1+\sqrt{5})^n - (1-\sqrt{5})^n}{2^n\sqrt{5}} 
-    \approx \begin{bmatrix} 
-                \frac{(1+\sqrt{5})^n}{2^n\sqrt{5}}
-            \end{bmatrix}$$
     \item Forma matricial: 
     $$\begin{vmatrix}
         1 & 1 \\
@@ -66,9 +61,6 @@ Os 11 primerios números da sequência são:
         F_{n} & F_{n-1} 
     \end{vmatrix}$$
 \end{itemize}
-
-\subsubsection{Aritmética Modular}
-[...]
 
 \subsubsection{Funções}
 \paragraph{Função Totiente de Euler.} A função-phi $\phi(n)$ conta o número de inteiros entre 1 e $n$ incluso, nos quais são coprimos com $n$. Dois números são coprimos se o MDC deles é igual a 1.
@@ -93,13 +85,13 @@ Os 11 primerios números da sequência são:
 \textbf{Aplicações:}
 \begin{itemize}
     \item Teorema de Euler: Seja $m$ um inteiro positivo e $a$ um inteiro coprimo com $m$, então:
-    $$a^{\phi(m)} \equiv 1 (\mod m)$$
-    $$a^n \equiv a^{n \mod \phi(m)} (\mod m)$$
+    $$a^{\phi(m)} \equiv 1 \pmod m$$
+    $$a^n \equiv a^{n \pmod \phi(m)} \pmod m$$
     
     \item Generalização do Teorema de Euler: Seja $x$,$m$ inteiros positivos e $n \ge \log_2m$,
-    $$x^n \equiv x^{\phi(m)+[n \mod \phi(m)]}(\mod m)$$
+    $$x^n \equiv x^{\phi(m)+[n \pmod{\phi(m)}]} \pmod m$$
     
-    \item Teoria dos Grupos: $\phi(n)$ é a ordem de um grupo multiplicativo mod n $(\mathbb{Z}/n\mathbb{Z})^{\times}$, que é o grupo dos elementos com inverso multiplicativo (aqueles coprimos com $n$). A ordem multiplicativa de um elemento $a$ mod $m$ ($\textnormal{ord}_m(a)$), na qual também é o tamanho do subgrupo gerado por $a$, é o menor $k > 0$ tal que $a^k \equiv 1 (\mod m)$. Se a ordem multiplicativa de $a$ é $\phi(m)$, o maior possível, então $a$ é \textbf{raiz primitiva} e o grupo é cíclico por definição.
+    \item Teoria dos Grupos: $\phi(n)$ é a ordem de um grupo multiplicativo mod n $(\mathbb{Z}/n\mathbb{Z})^{\times}$, que é o grupo dos elementos com inverso multiplicativo (aqueles coprimos com $n$). A ordem multiplicativa de um elemento $a$ mod $m$ ($\textnormal{ord}_m(a)$), na qual também é o tamanho do subgrupo gerado por $a$, é o menor $k > 0$ tal que $a^k \equiv 1 \pmod m$. Se a ordem multiplicativa de $a$ é $\phi(m)$, o maior possível, então $a$ é \textbf{raiz primitiva} e o grupo é cíclico por definição.
     
 \end{itemize}
 
@@ -129,3 +121,87 @@ $$\sigma(n) = \frac{p_1^{e_1+1}-1}{p_1-1} \cdot \frac{p_2^{e_2+1}-1}{p_2-1}  \do
         
     \end{tabular}
 \end{center}
+
+\subsubsection{Aritmética Modular}
+Dado um inteiro $m \ge 1$, chamado módulo, dois inteiros $a$ e $b$ são ditos congruentes módulo $m$, se existe um inteiro $k$ tal que
+$$a-b = km,$$
+
+Congruência módulo $m$ é denotada: $a \equiv b \pmod m$
+
+\textbf{Propriedades.}
+\begin{multicols}{2}
+    \begin{itemize}
+        \item $(a \pm b) \pmod m = (a \mod m \pm b \mod m) \pmod m$.
+        \item $(a \cdot b) \pmod m = (a \mod m)\cdot(b\mod m) \pmod m$.
+        \item $a^b \pmod m = (a \mod m)^b \pmod m$.
+        \item $a \pm k \equiv b \pm k \pmod m$, para qualquer inteiro $k$.
+        \item $a \cdot k \equiv b \cdot k \pmod m$, para qualquer inteiro $k$.
+        \item $a \cdot k \equiv b \cdot k \pmod {k\cdot m}$, para qualquer inteiro $k$.
+    \end{itemize}
+    
+\end{multicols}
+
+\paragraph{Inverso Multiplicativo Modular.} O inverso multiplicativo modular de um número $a$ é um inteiro $a^{-1}$ tal que
+$$a\cdot a^{-1} \equiv 1 \pmod m.$$
+
+O inverso modular existe se, e somente se, $a$ e $m$ são coprimos.
+
+Um método para achar o inverso modular é usando o Teorema de Euler. Multiplicando ambos os lados da equação do teorema por $a^{-1}$ obtemos:
+$$a^{\phi(m)} \equiv 1 \pmod m \xrightarrow{\times (a^{-1})} a^{\phi(m)-1} \equiv a^{-1} \pmod m$$
+
+\paragraph{Equação de Congruência Linear.} Essa equação é da forma:
+$$a\cdot x \equiv b \pmod m,$$
+onde $a$,$b$ e $m$ são inteiros conhecidos e $x$ uma incógnita.
+
+Uma forma de achar uma solução é via achando o elemento inverso. Seja $g = \gcd(a,m)$, se $b$ não é divisível por $g$, não há solução. 
+
+Se $g$ divide $b$, então ao dividir ambos os lados da equação por $g$ ($a$,$b$ e $m$), recebemos uma nova equação:
+$$a'\cdot x \equiv b' \pmod{m'}.$$
+
+Como $a'$ e $m'$ são coprimo, podemos encontrar o inverso $a'$, e multiplicar ambos os lados da equação pelo inverso, e então obtemos uma solução única.
+$$x \equiv b'\cdot a'^{-1} \pmod{m'}$$
+
+A equação original possui exatas $g$ soluções, e elas possuem a forma:
+$$x_i \equiv (x + i\cdot m') \pmod m, \quad 0 \leq i \leq g-1.$$
+
+\paragraph{Teorema do Resto Chinês.} Seja $m=m_1\cdot m_2 \cdot \dots \cdot m_k$, onde $m_i$ são coprimos dois a dois. Além de $m_i$, recebemos também um sistema de congruências
+$$
+\begin{cases}
+    a \equiv a_1 \pmod {m_1} \\
+    a \equiv a_2 \pmod {m_2} \\
+    \vdots \\
+    a \equiv a_k \pmod {m_k}
+\end{cases}
+$$
+onde $a_i$ são constantes dadas. O teorema afirma que o sistema de congruências dado sempre tem uma e apenas uma solução módulo $m$.
+
+Seja $M_i = \prod_{i \neq j} m_j$, o produto de todos os módulos menos $m_i$, e $N_i$ os inversos modulares $N_i = M_i^{-1} \mod m_i$. Então, a solução do sistema de congruências é:
+$$a \equiv \sum_{i=1}^{k} a_iM_iN_i \pmod{m_1\cdot m_2 \cdot \dots m_k}.$$
+
+Para módulos não coprimos, o sistema de congruências tem exatas uma solução módulo $lcm(m_1,m_2,\dots,m_k)$, ou tem nenhuma solução.
+
+Uma única congruência $a \equiv a_i \pmod{m_i}$ é equivalente ao sistema de congruências $a \equiv a_i \pmod{p_j^{n_j}}$, onde $p_1^{n_1}p_2^{n_2}\dots p_k^{n_k}$ é a fatoração prima de $m_i$. A congruência com o maior módulo de potência prima será a congruência mais forte dentre todas as congruências com a mesma base prima. Ou dará uma contradição com alguma outra congruência, ou implicará já todas as outras congruências.
+
+Se não há contradições, então o sistema de equações tem uma solução. Podemos ignorar todas as congruências, exceto aquelas com os módulos de maior potência de primo. Esses módulos agora são coprimos e, portanto, podemos resolver com o algoritmo do caso geral.
+
+\paragraph{Raiz primitiva.} Um número $g$ é raiz primitiva módulo $m$ se e somente se para qualquer inteiro $a$ tal que $\gcd(a,n) = 1$, existe um inteiro $k$ tal que:
+$$g^k \equiv a \pmod m.$$
+
+$k$ é chamado de índice ou logaritmo discreto de $a$ na base $g$ módulo $m$. $g$ é chamado de generador do grupo multiplicativo dos inteiros módulo $m$.
+
+A raiz primitiva módulo $m$ existe se e somente se:
+\begin{itemize}
+    \item $m$ é 1,2,4, ou
+    \item $m$ é um potência de um primo ímpar $(m = p^k)$, ou
+    \item $m$ é o dobro de uma potência de um primo ímpar $(m = 2\cdot p^k)$.
+\end{itemize}
+
+Para encontrar a raiz primitiva:
+\begin{enumerate}
+    \item Encontrar $\phi(m)$ (Função Totiente de Euler) e fatorizá-lo.
+    \item Iterar por todos os números $g \in [1,m]$, e para cada número, para verificar se é raiz primitiva, fazemos:
+    \begin{enumerate}
+        \item Calcular todos $g^{\frac{\phi(m)}{p_i}} \pmod m$.
+        \item Se todos o valores são diferentes de 1, então $g$ é uma raiz primitiva.
+    \end{enumerate} 
+\end{enumerate}
