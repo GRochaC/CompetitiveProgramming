@@ -4,7 +4,8 @@ Geometricamente é o produto do comprimento do vetor $a$ pelo comprimento da pro
 
 $$a \cdot b = \|a\|\|b\|\cos\theta.$$
 
-\subsubsection*{Propriedades.}
+\textbf{Propriedades.}
+
 \begin{multicols}{2}
 	\begin{enumerate}
 		\item $a \cdot b = b \cdot a$.
@@ -29,7 +30,8 @@ $$
 
 O sinal do coeficiente $e_z$ do produto vetorial indica a orientação relativa dos vetores. Se positivo, o ângulo de $a$ e $b$ é anti-horário. Se negativo, o ângulo é horário e se for zero, os vetores são colineares.
 
-\paragraph{Propriedades.}
+\textbf{Propriedades.} 
+
 \begin{enumerate}
 	\item $a \times b = -b \times a$.
 	\item $(\alpha \cdot a) \times b = \alpha \cdot (a \times b)$.
@@ -81,7 +83,9 @@ O sinal do coeficiente $e_z$ do produto vetorial indica a orientação relativa 
 		\end{enumerate}
 
 \subsubsection{Geometria Plana}
-\subsubsection*{Triângulos.}
+
+\paragraph{Triângulos.} Polígono com três vértices e três arestas. Uma aresta arbitrária é escolhida como a base e, nesse caso, o vértice oposto é chamado de ápice. Um triângulo com vértices $A$, $B$ e $C$ é denotado $\triangle ABC$.
+
 \begin{multicols}{2}
 	\begin{itemize}
 		\item Comprimento dos lados: $a,b,c$
@@ -103,23 +107,38 @@ O sinal do coeficiente $e_z$ do produto vetorial indica a orientação relativa 
 	\end{itemize}
 \end{multicols}
 
-\subsubsection*{Quadriláteros.}
-\begin{center}
-	\begin{tabular}{|c|c|c|c|}
-		Figura & Área ($A$) & Perímetro ($P$) & Diagonal ($d$) \\
-		\hline
-		Quadrado & $l^2$ & $4l$&$l\sqrt{2}$ \\
-		\hline
-		Retângulo&$bh$&$2(b+h)$&$\sqrt{b^2 + h^2}$\\
-		\hline
-		Losango&$\frac{1}{2}Dd$&$4l$&$l\sqrt{2}$\\
-		\hline
-		Trapézio&$\frac{1}{2}h(B+b)$&$B+b+l_1+l_2$&$\sqrt{h^2 + \frac{(B-b)^2}{4h}}$
-		
-	\end{tabular}
-\end{center}
+\noindent \textbf{Quadriláteros.} Polígono de quatro lados, tendo quatro arestas e quatro vértices. Um quadrilátero com vértices $A$, $B$, $C$ e $D$ é denotado com $\square ABCD$.
 
-\subsubsection*{Círculos.}
+\begin{multicols}{2}
+	\begin{itemize}
+		\item Comprimento dos lados: $a,b,c,d$
+		\item Semiperímetro: $p = \frac{a+b+c+b}{2}$
+		\item Área:
+		\begin{itemize}
+			\item Quadrado: $a^2$
+			\item Retângulo: $b\cdot h$
+			\item Losango: $\frac{1}{2}D \cdot d$
+			\item Trapézio: $\frac{1}{2}h(B+b)$
+		\end{itemize}
+		\item Perímetro:
+		\begin{itemize}
+			\item Quadrado: $4a$
+			\item Retângulo: $2(b+h)$
+			\item Losango: $4a$
+			\item Trapézio: $B+b+l_1+l_2$
+		\end{itemize}
+		\item Diagonal:
+		\begin{itemize}
+			\item Quadrado: $a\sqrt{2}$
+			\item Retângulo: $\sqrt{b^2 + h^2}$
+			\item Losango: $a\sqrt{2}$
+			\item Trapézio: $\sqrt{h^2 + \frac{(B-b)^2}{4h}}$
+		\end{itemize}
+	\end{itemize}
+\end{multicols}
+
+\paragraph{Círculos.} Forma que consiste em todos os pontos de um plano que estão a uma determinada distância de um ponto dado, o centro. A distância entre qualquer ponto do círculo e o centro é chamada de raio.
+
 \begin{multicols}{2}
 	\begin{itemize}
 		\item Área: $A = \pi r^2$
@@ -133,41 +152,63 @@ O sinal do coeficiente $e_z$ do produto vetorial indica a orientação relativa 
 
 \paragraph{Teorema de Pick.} Suponha que um polígono tenha coordenadas inteiras para todos os seus vértices. Seja $i$ o número de pontos inteiros no interior do polígono e $b$ o número de pontos inteiros na sua fronteira (incluindo vértices e pontos ao longo dos lados). Então, a área $A$ deste polígono é:
 $$A = i + \frac{b}{2} -1.$$
-$$b = gcd(x_2-x_1,y_2-y_1)+1.$$
+$$b = \gcd(|x_2-x_1|,|y_2-y_1|)+1.$$
+
+\subsubsection{Geometria Espacial}
+
+\begin{multicols}{2}
+	\begin{itemize}
+		\item Área da Superfície:
+		\begin{itemize}
+			\item Cubo: $6a^2$
+			\item Prisma: $A_l + 2A_b$
+			\item Esfera: $4\pi r^2$
+			\item Cilindro: $2\pi r(h+r)$
+			\item Cone: $\pi r(r+\sqrt{h^2+r^2})$
+			\item Pirâmide: $A_b+\frac{1}{2}P_b \cdot g, \quad g=\textnormal{geratriz}$
+		\end{itemize}
+
+		\item Volume:
+		\begin{itemize}
+			\item Cubo: $a^3$
+			\item Prisma: $A_b\cdot h$
+			\item Esfera: $\frac{4}{3} \pi r^3$
+			\item Cilindro: $\pi r^2h$
+			\item Cone: $\frac{1}{3} \pi r^2 h$
+			\item Pirâmide: $\frac{1}{3} A_b\cdot h$
+		\end{itemize}
+
+	\end{itemize}
+\end{multicols}
+
+\paragraph{Fórmula de Euler para Poliedros.} Os números de faces, vértices e arestas de um sólido não são independentes, mas estão relacionados de uma maneira simples.
+$$F + V - A = 2.$$
 
 \subsubsection{Trigonometria}
 \paragraph{Funções Trigonométricas.}
-	$$\sin\theta = \frac{\textnormal{cateto oposto a }\theta}{\textnormal{hipotenusa}}$$
+	$$\sin\theta = \frac{\textnormal{cateto oposto a }\theta}{\textnormal{hipotenusa}}  \quad \cos\theta = \frac{\textnormal{cateto adjacente a }\theta}{\textnormal{hipotenusa}} \quad \tan\theta = \frac{\textnormal{cateto oposto a }\theta}{\textnormal{cateto adjacente a}\theta}$$
 
-	$$\cos\theta = \frac{\textnormal{cateto adjacente a }\theta}{\textnormal{hipotenusa}}$$
-
-	$$\tan\theta = \frac{\textnormal{cateto oposto a }\theta}{\textnormal{cateto adjacente a}\theta}$$
-
-\subsubsection*{Ângulos notáveis.}
+\paragraph{Ângulos notáveis.}
 
 \begin{center}
 	\begin{tabular}{|c|c c c c c|}
 		$\theta$ & $0^{\circ}$ & $30^{\circ}$&$45^{\circ}$&$60^{\circ}$&$90^{\circ}$ \\
 		\hline
-		$\sin\theta$ &0&$\frac{1}{2}$&$\frac{\sqrt{2}}{2}$&$\frac{\sqrt{3}}{2}$&1 \\
+		\rule{0pt}{0.5cm}$\sin\theta$ &0&$\frac{1}{2}$&$\frac{\sqrt{2}}{2}$&$\frac{\sqrt{3}}{2}$&1 \\
 		\hline
-		$\cos\theta$ &1&$\frac{\sqrt{3}}{2}$&$\frac{\sqrt{2}}{2}$&$\frac{1}{2}$&0 \\
+		\rule{0pt}{0.5cm}$\cos\theta$ &1&$\frac{\sqrt{3}}{2}$&$\frac{\sqrt{2}}{2}$&$\frac{1}{2}$&0 \\
 		\hline
-		$\tan\theta$ &0&$\frac{\sqrt{3}}{3}$&1&$\sqrt{3}$&$\infty$ \\
+		\rule{0pt}{0.5cm}$\tan\theta$ &0&$\frac{\sqrt{3}}{3}$&1&$\sqrt{3}$&$\infty$ \\
 		
 	\end{tabular}
 \end{center}
 
-\subsubsection*{Propriedades.}
+\textbf{Propriedades.}
 \begin{multicols}{2}
 	\begin{enumerate}
 		\item $\sin(a+b) = \sin a \cos b + \cos a \sin b$
 		\item $\cos(a+b) = \cos a \cos b - \sin a \sin b$
 		\item $\tan(a+b) = \frac{\tan a + \tan b}{1 - \tan a \tan b}$
-		\item $\sin a + \sin b = 2\sin\frac{a+b}{2}\cos\frac{a-b}{2}$
-		\item $\sin a - \sin b = 2\cos\frac{a+b}{2}\sin\frac{a-b}{2}$
-		\item $\cos a + \cos b = 2\cos\frac{a+b}{2}\cos\frac{a-b}{2}$
-		\item $\cos a - \cos b = 2\sin\frac{a+b}{2}\sin\frac{a-b}{2}$
 		\item $a\sin x+b\cos x = r\sin(x+\phi)$, onde $r=\sqrt{a^2+b^2}$ e $\phi = \tan^{-1}\frac{b}{a}$ 
 		\item $a\cos x+b\sin x = r\cos(x-\phi)$, onde $r=\sqrt{a^2+b^2}$ e $\phi = \tan^{-1}\frac{b}{a}$
 		\item \textbf{Lei dos Senos}: $$\frac{a}{\sin \hat{A}} = \frac{b}{\sin \hat{B}} = \frac{c}{\sin \hat{C}} = 2r.$$
