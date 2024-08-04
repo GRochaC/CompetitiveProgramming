@@ -15,7 +15,7 @@ Resumos
 - [Misc](C++/Misc)
 - [Numeric](C++/Numeric/)
 
-Códigos podem ser testados nos links providenciados em [libtest]{libtest.txt} 
+Códigos podem ser testados nos links providenciados em [libtest](libtest.txt) 
 
 Gerando notebook
 ----------------------
@@ -49,4 +49,4 @@ Comando:
 python3 notebookcreator.py
 ```
 
-Note que elementos em [block_from_notebook]{block_from_notebook.txt} não serão renderizados no notebook!
+Note que elementos em [block_from_notebook](block_from_notebook.txt}) não serão renderizados no notebook!
