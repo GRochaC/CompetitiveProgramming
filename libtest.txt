@@ -1,0 +1,3 @@
+# ED 
+segtree: https://judge.yosupo.jp/problem/point_add_range_sum
+segtree_lazy: https://www.spoj.com/problems/HORRIBLE/
