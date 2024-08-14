@@ -184,6 +184,29 @@ Uma única congruência $a \equiv a_i \pmod{m_i}$ é equivalente ao sistema de c
 
 Se não há contradições, então o sistema de equações tem uma solução. Podemos ignorar todas as congruências, exceto aquelas com os módulos de maior potência de primo. Esses módulos agora são coprimos e, portanto, podemos resolver com o algoritmo do caso geral.
 
+\paragraph{Logaritmo discreto.} Sejam $a$, $b$, $k$, $m$ inteiros, queremos encontrar $x$ tal que a equação seja válida:
+$$ka^x \equiv b \pmod{m}.$$
+
+Para encontrá-lo:
+\begin{enumerate}
+    \item Reescrevemos $x=np-q$, onde obteremos a seguinte equação:
+    $$ka^{np-q} \equiv b \pmod{m}, \quad n = \sqrt{m}+1.$$
+    \item No caso de $g = \gcd(a,m) = 1$, obtemos:
+    $$ka^{np} \equiv ba^q \pmod{m}.$$
+    \item Caso contrário:
+    \begin{enumerate}
+        \item Se $g \nmid b$, a equação não possui solução.
+        \item Se $g \mid b$, escrevemos $a=g\alpha$, $b=g\beta$, $m=g\mu$, e obtemos a seguinte equação:
+        $$k(g\alpha)a^{x-1} \equiv g\beta \pmod{g\mu}$$
+        $$(k\alpha)a^{x-1} \equiv \beta \pmod{\mu}$$
+    \end{enumerate}
+    \item Para todo $q \in [0,n]$, calculamos todos os valores possíveis de $f_1(q) = ba^q \pmod{m}$.
+    \item Por fim, para todo $p \in [0,n]$, calculamos todos os valores possíveis de $f_2(p) = ka^{np} \pmod{m}$ até encontrarmos um valor $p$ tal que
+    $$f_1(q) = f_2(p).$$
+\end{enumerate}
+
+Seguindo esses passos, iremos encontrar o menor $x$ que tornará a equação válida.
+
 \paragraph{Raiz primitiva.} Um número $g$ é raiz primitiva módulo $m$ se e somente se para qualquer inteiro $a$ tal que $\gcd(a,n) = 1$, existe um inteiro $k$ tal que:
 $$g^k \equiv a \pmod m.$$
 
