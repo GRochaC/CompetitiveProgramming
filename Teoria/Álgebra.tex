@@ -228,3 +228,15 @@ Para encontrar a raiz primitiva:
         \item Se todos o valores são diferentes de 1, então $g$ é uma raiz primitiva.
     \end{enumerate} 
 \end{enumerate}
+
+\paragraph{Raiz discreta.} Sejam $k$, $a$ inteiros e $m$ um primo, queremos encontrar todo $x$ tal que:
+$$x^k \equiv a \pmod{m}.$$
+
+Seja $g$ a raiz primitiva módulo $m$, podemos representar a raiz discreta como uma potência de $g$. Assim, podemos reescrever a equação como:
+$$x^k \equiv (g^y)^k \equiv a \pmod{m}$$
+$$(g^k)^y \equiv a \pmod{m}.$$
+
+Por fim, basta resolver o logaritmo discreto para descobrir uma solução.
+
+Ao achar uma solução $x_0 = g^{y_0} \pmod{m}$, as demais soluções possuem a forma:
+$$x_i = g^{y_0+i\frac{\phi(m)}{\gcd(\phi(m),k)}}, \quad i \in \mathbb{Z}.$$
