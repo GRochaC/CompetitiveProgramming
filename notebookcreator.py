@@ -107,6 +107,8 @@ def create_notebook(section, blocked):
 
                 txt.close()
 
+            aux += '\\newpage\n'
+
         aux += '\n\\end{document}\n'
         texfile.write(aux)
         texfile.close()
