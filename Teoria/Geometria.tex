@@ -2,9 +2,9 @@
 \paragraph{Produto Escalar.}
 Geometricamente é o produto do comprimento do vetor $a$ pelo comprimento da projeção do vetor $b$ sobre $a$.
 
-$$a \cdot b = \|a\|\|b\|\cos\theta.$$
+$$a \cdot b = \|a\|\cos\theta \|b\| = x_1x_2+y_1y_2+z_1z_2$$
 
-\textbf{Propriedades.}
+\paragraph{Propriedades.} \empty
 
 \begin{multicols}{2}
 	\begin{enumerate}
@@ -13,39 +13,53 @@ $$a \cdot b = \|a\|\|b\|\cos\theta.$$
 		\item $(a+b)\cdot c = a\cdot c + b \cdot c$.
 		\item Norma de $a$ (comprimento ao quadrado): $\|a\|^2 = a \cdot a$.
 		\item Projeção de $a$ sobre o vetor $b$: $\frac{a \cdot b}{\|b\|}$.
-		\item Ângulo entre os vetores: $\cos^{-1}{\frac{a \cdot b}{\|a\|\|b\|}}$
+		\item Ângulo entre os vetores: $\cos^{-1}{\frac{a \cdot b}{\|a\|\|b\|}}$.
+		\item $a \cdot b$ é negativo se o ângulo entre $a$ e $b$ é agudo, positivo se obtusoe igual à 0 eles formam um ângulo reto.	
 	\end{enumerate}
 \end{multicols}
 
 \paragraph{Produto Vetorial.}
 Dados dois vetores independentes linearmente $a$ e $b$, o produto vetorial $a \times b$ é um vetor perpendicular ao vetor $a$ e ao vetor $b$ e é a normal do plano contendo os dois vetores.
 
-$$a \times b = det
+\begin{center}
+	$
+	a \times b = det
 	\begin{vmatrix}
 		e_x & e_y & e_z \\
 		x_1 & y_1 & z_1 \\
 		x_2 & y_2 & z_2 \\
+	\end{vmatrix}, 
+	$
+	$
+	a \cdot (b \times c) = det
+	\begin{vmatrix}
+		x_1 & y_1 & z_1 \\
+		x_2 & y_2 & z_2 \\
+		x_3 & y_3 & z_3 \\	
 	\end{vmatrix}
-$$
+	$
+\end{center}
 
-O sinal do coeficiente $e_z$ do produto vetorial indica a orientação relativa dos vetores. Se positivo, o ângulo de $a$ e $b$ é anti-horário. Se negativo, o ângulo é horário e se for zero, os vetores são colineares.
+\paragraph{Propriedades.} \empty
 
-\textbf{Propriedades.} 
+\begin{multicols}{2}
+	\begin{enumerate}
+		\item $a \times b = -b \times a$.
+		\item $(\alpha \cdot a) \times b = \alpha \cdot (a \times b)$.
+		\item $a \cdot (b \times c) = b\cdot (c \times a) = -a\cdot(c\times b)$.
+		\item $(a+b)\times c = a\times c + b\times c$.
+		\item $\|a \times b \| = \|a\|\sin\theta \|b\|$.
+		\item Volume do paralelepípedo formado por $a$, $b$ e $c$: $|a \cdot (b \times c)|$.
+		\item Área do paralelogramo formado por $a$ e $b$: $|e_z \cdot (a \times b)| = |x_1y_2-y_1x_2|$.
+		\item O sinal do coeficiente $e_z$ do produto vetorial indica a orientação relativa dos vetores. Se positivo, o ângulo de $a$ e $b$ é anti-horário. Se negativo, o ângulo é horário e se for zero, os vetores são colineares.
+	\end{enumerate}
+\end{multicols}
 
-\begin{enumerate}
-	\item $a \times b = -b \times a$.
-	\item $(\alpha \cdot a) \times b = \alpha \cdot (a \times b)$.
-	\item $a \cdot (b \times c) = b\cdot (c \times a) = -a\cdot(c\times b)$.
-	\item $(a+b)\times c = a\times c + b\times c$.
-	\item $\|a \times b \| = \|a\|\|b\|\sin\theta$.
-\end{enumerate}
-
-\subsubsection{Geometria Analítica}
-\paragraph{Distância entre dois pontos.} Dados dois pontos $a = (x_1,y_2)$ e $b = (x_2,y_2)$, a distância entre $a$ e $b$ é dada por:
+	\paragraph{Distância entre dois pontos.} Dados dois pontos $a = (x_1,y_2)$ e $b = (x_2,y_2)$, a distância entre $a$ e $b$ é dada por:
 		$$d_{a,b} = \sqrt{(x_1 - x_2)^2 + (y_1 - y2)^2}$$
 
 \paragraph{Condição de alinhamento de três pontos.} Dados três pontos $a = (x_1,y_2)$, $b = (x_2,y_2)$ e $c = (x_3,y_3)$, os pontos $a$, $b$ e $c$ estão alinhados se:
-		$$det(A) =
+		$$det
 			\begin{vmatrix}
 				x_1 & y_1 & 1 \\
 				x_2 & y_2 & 1 \\
@@ -61,12 +75,33 @@ O sinal do coeficiente $e_z$ do produto vetorial indica a orientação relativa 
 \paragraph{Distância entre ponto e reta.} Dados um pontos $p = (x_1,y_1)$ e uma reta $r$ de equação $ax+by+c=0$, a distância entre $p$ e $r$ é dada por:
 		$$d_{p,r} = \frac{|ax_1+by_1+c|}{\sqrt{a^2+b^2}}$$
 
-\paragraph{Interseção de retas.} Para determinar os pontos de interseção é necessário resolver um sistema de equações. Há três possibilidades para interseção de retas:
-		\begin{enumerate}
-			\item Retas concorrentes: solução única. Apenas 1 ponto em comum.
-			\item Retas paralelas coincidentes: infinitas soluções. As retas possuem todos os pontos em comum.
-			\item Retas paralelas distintas: nenhuma solução. As retas não possuem nenhum ponto em comum.
-		\end{enumerate}
+\paragraph{Interseção de retas.} Para determinar os pontos de interseção é necessário resolver o seguinte sistema de equações lineares:
+$$
+\begin{cases}
+	a_1x + b_1y + c_1 = 0 \\
+	a_2x + b_2y + c_2 = 0
+\end{cases}
+$$
+
+A solução é dada por:
+$$x = -\frac{c_1b_2 - c_2b_2}{a_1b_2 - a_2b_1}, \quad y = -\frac{a_1c_2 - a_2c_1}{a_1b_2 - a_2b_1}.$$
+
+No caso do denominador for igual à 0, calculamos as seguintes determinantes, e se as duas são iguais à 0, as linhas são sobrepostas. Caso contrário, as linhas são paralelas e distintas.
+
+\begin{center}
+	$det
+	\begin{vmatrix}
+		a_1 & c_1 \\
+		a_2 & c_2 \\
+	\end{vmatrix}, 
+	$
+	$det
+	\begin{vmatrix}
+		b_1 & c_1 \\
+		b_2 & c_2 \\
+	\end{vmatrix}
+	$
+\end{center}
 
 \paragraph{Equação da Circuferência (forma reduzida).} Os pontos $(x,y)$ que pertencem a uma circuferência $c$ devem satisfazer:
 		$$(x-a)^2+(y-b)^2 = r^2,$$
@@ -75,7 +110,15 @@ O sinal do coeficiente $e_z$ do produto vetorial indica a orientação relativa 
 \paragraph{Equação da Circuferência (forma geral).} A partir da equação reduzida da circuferência, encontramos a equação geral:
 		$$x^2 +y^2-2ax-2by+(a^2+b^2-r^2)=0$$
 
-\paragraph{Interseção entre reta e circuferência.} Para determinar o tipo de interseção é necessário resolver um sistema não-linear. Há três possibilidades como solução do sistema:
+\paragraph{Interseção entre reta e circuferência.} Para determinar o tipo de interseção é necessário resolver o seguinte sistema não-linear: 
+$$
+\begin{cases}
+	ax+by+c = 0 \\
+	x^2 +y^2-2ax-2by+(a^2+b^2-r^2)=0
+\end{cases}
+$$
+
+Há três possibilidades como solução do sistema:
 		\begin{enumerate}
 			\item Reta exterior à circuferência: nenhuma solução. A reta não possui nenhum ponto de comum com a circuferência.
 			\item Reta tangente à circuferência: solução única. A reta possui apenas 1 ponto em comum com a circuferência.
