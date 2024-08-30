@@ -110,3 +110,8 @@ O número de Catalan $C_n$ é a solução para os seguintes problemas:
 Para calcular o tamanho da união de múltiplos conjuntos, é necessário somar os tamanhos desses conjuntos \textbf{separadamente}, e depois subtrair os tamanhos de todas as interseções \textbf{em pares} dos conjuntos, em seguida adicionar de volta o tamanho das interseções de \textbf{trios} dos conjuntos, subtrair o tamanho das interseções de \textbf{quartetos} dos conjuntos, e assim por diante, até a interseção de \textbf{todos} os conjuntos.
 
 $$|\bigcup_{i=1}^{n} A_i| = \sum_{\emptyset \neq J \subseteq \{1,2,...n\}}^{} (-1)^{|J|-1}|\bigcap_{j \in J}^{} A_j|$$
+
+\subsubsection{Lema de Burnside / Teorema da Enumeração de Pólya}
+Para contar o número de classes de equivalência de um conjunto $G$, baseando-se na simetria interna, utilizamos a seguinte fórmula:
+$$|\textnormal{Classes}| = \frac{1}{|G|}\sum_{\pi \in G} k^{C(\pi)},$$
+onde denotamos $C(\pi)$ como o número de ciclos em uma permutação $\pi$ e $k$ o número de valores que cada elemento de representação pode assumir.

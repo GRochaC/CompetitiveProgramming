@@ -91,7 +91,7 @@ def create_notebook(section, blocked):
                 aux += '\\includes{%s}{%s}\n' % \
                     (file_name, file_path)
 
-        aux += '\n\\end{multicols}\n'
+        aux += '\n\\end{multicols}\n\\newpage\n'
 
         # Adicionando a parte teorica
         path = 'Teoria'
@@ -106,6 +106,8 @@ def create_notebook(section, blocked):
                 aux += txt.read() + '\n'
 
                 txt.close()
+
+            aux += '\\newpage\n'
 
         aux += '\n\\end{document}\n'
         texfile.write(aux)

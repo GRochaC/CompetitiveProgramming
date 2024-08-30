@@ -1,44 +1,18 @@
-Uma matriz é uma estrutura matemática organizada em formato retangular composta por números, símbolos ou expressões dispostas em linhas e colunas.
-
-$$
-A = [a_{ij}]_{n\times m} = 
-\begin{vmatrix}
-	a_{11} &a_{12}& \dots& a_{1m} \\
-	a_{21} &a_{22} &\dots &a_{2m} \\
-	\vdots &\vdots &\ddots &\vdots \\
-	a_{n1} &a_{m_2} &\dots &a_{nm}
-\end{vmatrix}
-$$
-
-\subsubsection*{Operações}
-\paragraph{Soma.} A soma $A+B$ de duas matrizes $n\times m$ $A$ e $B$ é calculada por:
-$$[A+B]_{i,j} = A_{i,j} + B_{i,j}, \quad 1 \leq i \leq n \quad \textnormal{e} \quad 1 \leq j \leq m.$$
-
-\paragraph{Multiplicação Escalar.} O produto $cA$ de um escalar $c$ e uma matriz $A$ é calculado por:
-$$[cA]_{i,j} = cA_{i,j}.$$
-
-\paragraph{Transposta.} A matriz transposta $A^T$ da matriz $A$ é obtida quando as linhas e colunas de $A$ são trocadas:
-$$[A^T]_{i,j} = A_{j,i}.$$
-
-\paragraph{Produto.} O produto $AB$ das matrizes $A$ e $B$ é definido se $A$ é de tamanho $a\times n$ e $B$ é de tamanho $n\times b$. O resultado é uma matriz de tamanho $a\times b$ nos quais os elementos são calculados usando a fórmula:
-$$[AB]_{i,j} = \sum_{k = 1}^{n} A_{i,k}B_{k,j}.$$
-
-Essa operação é associativa, porém não é comutativa.
-
-Uma \textbf{matriz identidade} é uma matriz quadrada onde cada elemento na diagonal principal é 1 e os outros elementos são 0. Multiplicar uma matriz por uma matriz identidade não a muda.
-
-\paragraph{Potência.} A potência $A^k$ de uma matriz $A$ é definida se $A$ é uma matriz quadrada. A definição é baseada na multiplicação de matrizes:
-$$A^k = \prod_{i=1}^{k}A$$
-
-Além disso, $A^0$ é a matriz identidade.
-
-\paragraph{Determinante.} A determinante $det(A)$ de uma matriz $A$ é definida se $A$ é uma matriz quadrada. Se $A$ é de tamanho $1\times 1$, então $det(A)$ = $A_{11}$. A determinante de matrizes maiores é calculada recursivamente usando a fórmula:
+\subsubsection{Determinante} 
+A determinante $det(A)$ de uma matriz $A$ é definida se $A$ é uma matriz quadrada. Se $A$ é de tamanho $1\times 1$, então $det(A)$ = $A_{11}$. A determinante de matrizes maiores é calculada recursivamente usando a fórmula:
 $$det(A) = \sum_{j=1}^{m}A_{1,j}C_{1,j},$$
-
 onde $C_{i,j}$ é o \textbf{cofator} de $A$ em $i,j$. O cofator é calculado usando a fórmula:
 $$C_{i,j} = (-1)^{i+j}det(M_{i,j}),$$
-
 onde $M_{i,j}$ é obtido ao remover a linha $i$ e a coluna $j$ de $A$.
 
 A determinante de $A$ indica se existe uma \textbf{matriz inversa} $A^{-1}$ tal que $AA^{-1} = I$, onde $I$ é uma matriz identidade. $A^{-1}$ existe somente quando $det(A) \neq 0$, e pode ser calculada usando a fórmula:
 $$A^{-1}_{i,j} = \frac{C_{i,j}}{det(A)}.$$
+
+\subsubsection{Aplicações}
+\paragraph{Contando caminhos.} Quando $V$ é a matriz de adjacência de um grafo sem peso, a matriz $V^n$ contém o número de caminhos de $n$ arestas entres os vértices do grafo.
+
+\paragraph{Menores caminhos.} Usando uma ideia similar para grafos com peso, podemos calcular para cada par de vértices a distância mínima para um caminho entre eles no qual contém exatos $n$ arestas. Construímos a matriz de adjacência onde $\infty$ significa que uma aresta não existe, e outros valores correspondem ao peso da aresta. Utilizamos a fórmula
+$$AB_{i,j} = \min_{k=1}^{n} A_{i,k}+B_{k,j}$$
+na multiplicação de matriz. Após essa modificação, as potências da matriz correspondem aos menores caminhos no grafo.
+
+\paragraph{Teorema de Kirchhoff.} Para calcular o número de árvores geradoras de um grafo, construímos uma matrix laplaciana $L$, onde $L_{i,i}$ é o grau do vértice $i$ e $L_{i,j} = -1$ se há uma aresta entre os vértices $i$ e $j$, caso contrário $L_{i,j} = 0$. O número de árvores geradoras é igual à determinante da matriz que é obtida ao removermos qualquer linha e qualquer coluna de $L$.
